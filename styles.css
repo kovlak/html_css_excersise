@@ -1,8 +1,8 @@
 body,html{
     font-family: sans-serif;
-    height: 100vh;
+    height: 100VH;
     background:linear-gradient(to bottom right, darkgrey, darkolivegreen);
-    transition: background-color 1.5s;
+    transition: background-color 0.5s;
 }
 
 .page{
@@ -15,47 +15,113 @@ body,html{
     "sidebar section1 section2 section3"
     "sidebar section4 section4 section4"
     "footer footer footer footer";
-    gap: 4%;
+    gap: 20px;
     height: 100%;
     animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    
 }
 
 .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: bolder;
     grid-area: navbar;
     background-color: #ccc;
 }
 
 .main_content{
     grid-area:main;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bolder;
     background-color: #ecf0f1;
 }
 
 .sidebar{
     grid-area:sidebar;
+    font-size: 20px;
+    font-weight: bolder;
+    padding:20px;
     background-color: #3498db;
 }
 
 .section1{
     grid-area:section1;
+    font-size: 20px;
+    font-weight: bolder;
+    padding:20px;
     background-color: #e74;
 }
 
 .section2{
     grid-area:section2;
+    font-size: 20px;
+    font-weight: bolder;
+    padding:20px;
     background-color: #9b59b6;
 }
 
 .section3{
     grid-area:section3;
+    font-size: 20px;
+    font-weight: bolder;
+    padding:20px;
     background-color: #f39c23;
 }
 
 .section4{
     grid-area:section4;
+    font-size: 20px;
+    font-weight: bolder;
+    padding:20px;
     background-color: #555;
 }
 
 .footer{
     grid-area:footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    font-size: 20px;
+    font-weight: bolder;
     background-color: #ccc;
 }
+.navbar,.sidebar,.section1,.section2,.section3,.section4,.footer,.main_content{
+    border-radius: 10px;
+    box-shadow: 0 4px 3px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+.navbar:hover,.sidebar:hover,.section1:hover,.section2:hover,.section3:hover,.section4:hover,.footer:hover,.main_content:hover{
+    transform: scale(1.02);
+    box-shadow: 0 8px 6px rgba(0,0,0,0.6);
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 2;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .page{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1.5fr 1fr 1fr 0.8fr;
+        grid-template-areas:
+        "navbar"
+        "main"
+        "sidebar"
+        "section1"
+        "section2"
+        "section3"
+        "section4"
+        "footer";
+    }
